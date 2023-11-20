@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Edit item {{ item.title }}</h1>
-    {% include 'Item/_form.html.twig' %}
-    <a href="/items/show?id={{ item.id }}">Back</a>
+{% include 'Item/add.html.twig' %}
+    <h1>Modifier</h1>
+    
 {% endblock %}

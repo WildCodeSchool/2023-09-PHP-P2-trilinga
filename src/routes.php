@@ -16,7 +16,7 @@ return [
     'logout' => ['AuthController', 'logout'],
     'admin' => ['AdminController', 'index',],
     'admin/add' => ['AdminController', 'createQuiz',],
-    'admin/contenu' => ['AdminController', 'showContent',],
+    'admin/content' => ['AdminController', 'showContent',],
     'admin/edit' => ['AdminController', 'edit', ['id']],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
