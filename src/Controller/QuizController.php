@@ -20,12 +20,17 @@ class QuizController extends AbstractController
 
         $nextQuestion = $questionNum + 1;
 
+        if ($questionNum === 11) {
+            header("Location: /congratulation");
+            exit();
+        }
+
         return $this->twig->render('quiz.html.twig', [
             'questions' => $questions,
             'numero' => $questionNum,
             'next' => $nextQuestion,
             'languageId' => $languageId,
-            'levelId' => $levelId
+            'levelId' => $levelId,
         ]);
     }
 

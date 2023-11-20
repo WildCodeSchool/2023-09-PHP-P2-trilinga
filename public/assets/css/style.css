@@ -21,6 +21,10 @@
     border-style: none;
 }
 
+html {
+    background-color: var(--background);
+}
+
 /***********************About**********************************/
 
 .mission {
@@ -57,14 +61,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 main form {
     background-color: var(--primary-color);
     color: black;
-    display: flex;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -100,17 +103,29 @@ input[type=submit]{
     align-items: center;
 }
 
-.logout{
+/**************** A D M I N ************************/
+.add, .edit, .logout{
     background-color: #F5F5F5;
     color: black;
     border-radius: 20px;
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.logout:hover {
+.logout:hover, .add:hover, .edit:hover {
     background-color: #99f4df
+}
+
+.admin-tritri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 8rem;
+}
+
+.tritriLuffy{
+    max-width: 40vh;
 }
 
 input[type="submit"]:hover {
@@ -173,8 +188,8 @@ details {
 p {
     font-family: var(--font-family-autre);
     text-align: center;
-    font-size: 30px;
-    padding-bottom: 2rem;
+    font-size: 25px;
+    padding-bottom: 1,5rem;
 }
 
 .grid {
@@ -206,6 +221,66 @@ p {
     background-color: var(--primary-color);
     border: none;
     border-radius: 20px;
+}
+
+/**************** Q U I Z ************************/
+
+#progressBar {
+    background-color: #50C6AA;
+    border-radius: 20px;
+}
+
+.adv-quiz{
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adv-quiz p {
+    font-size: 1.3rem;
+}
+
+.adv-quiz img{
+    height: 5rem;
+}
+
+.imgQ {
+    max-height: 2rem;
+   max-width: 3rem;
+   border-radius: 1px; 
+}
+
+a#next-question {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    float: right;
+    color: #000000;
+    font-weight: bold;
+    background-color: #50C6AA;
+    border-radius: 20px; 
+    margin: 1rem; 
+    padding: 0.6rem; 
+    border: none;
+    width: 20%;
+}
+
+button.answer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;
+    color: #000000;
+    font-weight: bold;
+    background-color: #FFF;
+    border-radius: 20px; 
+    margin: 0.6rem; 
+    padding: 0.6rem; 
+    border: none;
+    max-height: 120px;
 }
 
 /**************** C O N G R A T U L A T I O N **************************/

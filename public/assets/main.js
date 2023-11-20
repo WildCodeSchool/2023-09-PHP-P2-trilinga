@@ -8,5 +8,5 @@ for (let index = 0; index < (Math.floor(Math.random() * 4) + 2); index++) {
             y: Math.random() - 0.2
         }
     });
-}
+} 
     

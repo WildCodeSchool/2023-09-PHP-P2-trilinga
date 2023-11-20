@@ -1,28 +1,28 @@
 {% extends 'layout.html.twig' %}
 
 {% block nav %}
-    {% include 'navbar.html.twig' %}
+  {% include 'navbar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
-<p>Question n°{{numero}}</p>
+<progress id="progressBar" max="100" value="0"></progress> 
 
+  <div class="adv-quiz">
+    <img src="https://i.goopics.net/djq5ga.png" alt= 'logo trilinga'>
+    <p>Question n°{{numero}} /10</p>
+  </div>
 {% set index = (numero  - 1) * 3 %}
 
 <h1>{{questions[index].entitled}}</h1>
 
-<p>{{indexQuestion}}</p>
+  <button class="answer {{ (questions[index].is_true) ? 'true-answer' : 'false-answer' }}">{{questions[index].content}}<img class="imgQ" src="{{ questions[index].url }}"/></button>
 
-<a href={{'/quiz?language=' ~ languageId  ~ '&level='  ~ levelId  ~ '&q=' ~ next}}>{{questions[index].content}} <img {{ answers.url }}/></a>
-<a href={{'/quiz?language=' ~ languageId  ~ '&level='  ~ levelId  ~ '&q=' ~ next}}>{{questions[index + 1].content}}</a>
-<a href={{'/quiz?language=' ~ languageId  ~ '&level='  ~ levelId  ~ '&q=' ~ next}}>{{questions[index + 2].content}}</a>
+  <button class="answer {{ (questions[index + 1].is_true) ? 'true-answer' : 'false-answer' }}">{{questions[index + 1].content}}<img class="imgQ" src="{{ questions[index + 1].url }}"/></button>
 
+  <button class="answer {{ (questions[index + 2].is_true) ? 'true-answer' : 'false-answer' }}">{{questions[index + 2].content}}<img class="imgQ" src="{{ questions[index + 2].url }}"/></button>
 
-<button>{{questions[0].content}} <img src="{{ answers.url }}"/></button>
-<button>{{questions[1].content}}</button>
-<button>{{questions[2].content}}</button>
-
+  <a id="next-question" href={{'/quiz?language=' ~ languageId  ~ '&level='  ~ levelId  ~ '&q=' ~ next}}>Question suivante</a>
 
 {% endblock %}
 
@@ -32,3 +32,5 @@
     <li><a href="/login">login</a></li>
   </ul>
 {% endblock %}
+
+{% block javascript %}<script src="assets/quiz.js"></script>{% endblock %}

@@ -2,23 +2,15 @@
 
 {% block content %}
     <div class="admin-tritri">
-        <img src="https://i.goopics.net/djq5ga.png" alt= 'logo trilinga'>
+        <img src="https://i.goopics.net/la626m.png" class="tritriLuffy" alt= 'logo trilinga'>
     </div>
     <h1>Admin</h1>
     <div>
-        <form>
-            <label for="add">
-                <input type="text" id="add" name="add" placeholder="Ajouter">
-            </label>
-            <br>
+        <a href="/admin/add" role="button" class="add" >Ajouter au Quiz</a><br>
 
-            <label for="modif">
-                <input type="text" id="modif" name="modif" placeholder="Modifier">
-            </label>
-            <br>
-            
-            <a href="/logout" class="logout">Déconnexion</a>   
-        </form>
+        <a href="/admin/edit" role="button" class="edit">Modifier le Quiz</a><br>
+
+        <a href="/logout" role="button" class="logout">Déconnexion</a>   
     </div>
 {% endblock %}
 
