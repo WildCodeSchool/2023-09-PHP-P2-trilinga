@@ -5,7 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Edit item {{ item.title }}</h1>
-    {% include 'Item/_form.html.twig' %}
-    <a href="/items/show?id={{ item.id }}">Back</a>
+    <h1>Modifier</h1>
+    <form method="post">
+    <label for="title">Modifier la question</label>
+    <input type="text" value="{{question.entitled}}" name="title" id="title">
+    {% for answer in answers %}
+    <label for="title">Modifier la réponse</label>
+   <input type="text" value="{{ answer.content }}" name="id">
+    {% endfor %}
+	<input type="submit" value="Modifier">
+</form>
 {% endblock %}

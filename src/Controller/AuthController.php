@@ -30,9 +30,6 @@ class AuthController extends AbstractController
                 $errors[] = 'Adresse email au mauvais format';
             }
             if (empty($errors)) {
-                // TODO validations (length, format...)
-
-                // if validation is ok, update and redirection
                 $authManager = new AuthManager();
                 $user = $authManager->selectOneByEmail($data['email']);
 

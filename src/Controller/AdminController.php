@@ -69,11 +69,37 @@ class AdminController extends AbstractController
 
     public function showContent(): string
     {
-        return $this->twig->render('Item/contenu.html.twig');
+        $questionManager = new QuestionManager();
+        $questions = $questionManager->selectAllQuestionsWithAnswers();
+
+        $languageManager = new LanguageManager();
+        $languages = $languageManager->selectAll();
+
+        $levelManager = new LevelManager();
+        $levels = $levelManager->selectAll();
+
+        return $this->twig->render('Item/content.html.twig', [
+            'questions' => $questions,
+            'languages' => $languages,
+            'levels' => $levels]);
     }
 
-    public function edit(): ?string
+    public function edit($id)
     {
-        return $this->twig->render('Item/edit.html.twig');
+        // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $questionManager = new QuestionManager();
+            $question = $questionManager->selectOneQuestionById($id);
+
+            $answerManager = new AnswerManager();
+            $answers = $answerManager->selectThreeAnswerByIdWithQuestion($id);
+
+            // $questionManager = new QuestionManager();
+            // $updated = $questionManager->update();
+
+            return $this->twig->render('Item/edit.html.twig', [
+                'question' => $question,
+                'answers' => $answers,
+                // 'updated' => $updated
+            ]);
     }
 }

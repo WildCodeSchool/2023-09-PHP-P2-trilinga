@@ -14,7 +14,7 @@
         <select name="language">
         <option disabled selected>Langue</option>
         {% for language in languages %}
-            <option value="{{language.id}}">{{language.name}}</option>
+            <option value="{{language.id}}" id="recherche">{{language.name}}</option>
         {% endfor %}
         </select>
         </div>
@@ -27,4 +27,30 @@
         {% endfor %}
         </select>
         </div>
+
+        <label for="site-search">
+        <input type="search" id="site-search" name="recherche"/>
+        </label>
+    <table role="grid">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Question</th>
+      <th scope="col">Réponse</th>
+      <th scope="col">Language</th>
+      <th scope="col">Level</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for question in questions %}
+    <tr>
+      <th scope="row"></th>
+      <td>{{question.entitled}}</td>
+      <td>{{question.content}}</td>
+      <td>{{question.lg_name}}</td>
+      <td>{{question.lv_name}} <a href="/admin/edit?id={{question.id}}"><img src="/assets/images/modifier.png"/></a> <img src="/assets/images/supprimer.png"/></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
