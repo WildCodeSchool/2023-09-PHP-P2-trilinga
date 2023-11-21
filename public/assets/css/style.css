@@ -14,7 +14,7 @@
 /**************** A L L  &  B O D Y ************************/
 * {
 	margin: 0;
-	padding: 0%;
+	padding: 0;
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
@@ -105,12 +105,13 @@ input[type=submit]{
 
 /**************** A D M I N ************************/
 .add, .edit, .logout{
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     color: black;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border:none;
 }
 
 .logout:hover, .add:hover, .edit:hover {
@@ -152,29 +153,32 @@ body {
 nav {
     background-color: var(--primary-color);
     width: auto;
-    height: 10vh;
+    height: 8vh;
+}
+
+.icone-maison {
+    display: flex;
+    align-items: center; 
+}
+
+.maison {
+    display: flex;
+    align-items: center; 
+    width: 2.5rem;
+    margin-left: 0.5rem;
 }
 
 strong {
     font-family: var(--font-family-h1);
     color: var(--font-color-h1);
     font-size: 1.9rem;
+    margin-left: 1.5rem;
     padding-left: 10px;
 }
 
-.icone-maison {
-  width: 13vw;
-  padding-right: 5px;
-  padding-bottom: 8px;
-
-}
-
-details {
-    width: 8vw;
-}
-
-.langue-icone {
-    width: 17vw;
+.chosen-language {
+width: 2.5rem;
+margin-right: 3rem;
 }
 
 /**************** M A I N ************************/
@@ -193,12 +197,14 @@ p {
 }
 
 .grid {
-    position: fixed;
     display: flex;
-    width: 70vw;
-    margin-right: 2.8rem;
-    margin-left: 2.8rem;
-    column-gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grid img {
+    justify-content: space-around;
+    height: 7rem;
 }
 
 .tritri-level {
@@ -212,7 +218,7 @@ p {
 .level {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2.6rem;
     margin-top: 2rem;
 }
 
@@ -223,8 +229,11 @@ p {
     border-radius: 20px;
 }
 
-/**************** Q U I Z ************************/
+.level a:hover {
+    background-color: #99f4df;
+}
 
+/**************** Q U I Z ************************/
 #progressBar {
     background-color: #50C6AA;
     border-radius: 20px;
@@ -291,24 +300,171 @@ button.answer {
     padding-top: 3rem;
 }
 
+a.newGame {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;    
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: none;
+}
+
+a.newGame:hover {
+    background-color: #99f4df;
+}
+
 /**************** A D D  P A G E **************************/
+.form-add {
+    width: 70%;
+}
+
 select {
     background-color: white;
     text-align: center;
     justify-content: center;
-    height: 6vh;
-    width: 38vw;
-    border-radius: 40px;
+    height: 8vh;
+    width: 35vw;
+    border-radius: 20px;
 }
 
 .list-dropdown {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     font-family: var(--font-family-autre);
 }
 
-/********************** FOOTER *******************************/
+p {
+    color: black;
+}
 
+[type=file] {
+    display: flex;
+    align-items: center;
+    color: #ff0000;
+}
+
+/***********************About**********************************/
+.mission {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    color: black;
+}
+.team {
+    margin-top: 3rem;
+    padding: 1rem 0rem 1rem 0rem;
+    font-size: 1rem;
+    color: black;
+}
+
+div.tritri-about{
+    display: flex;
+    justify-content: center;
+}
+div.tritri-about img{
+    max-width: 20vh;
+}
+
+/****************** Login**********************************/
+.icone-tritri { display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+} 
+
+h1 {
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+main form {
+    background-color: var(--primary-color);
+    color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: large;
+    font-weight: bold;
+    width: 50%;
+    border-radius: 20px;
+    margin: auto;
+    padding:20px;
+}
+
+input{
+    border-radius: 20px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+label{
+    width: 100%;
+}
+
+input[type=submit]{
+    background-color: #FFF;
+    color: black;
+    border-radius: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    background-color: #F5F5F5;
+    color: black;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logout:hover {
+    background-color: #99f4df
+}
+
+input[type="submit"]:hover {
+    background-color: #99f4df;
+}
+
+input#nom, input#motDePasse{
+    max-width: 80%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+
+    main form {
+        width: 80%;
+    }
+}
+
+body {
+    background-color: var(--background);
+    height: 100vh;
+}
+
+details {
+    width: 8vw;
+}
+/*
+.langue-icone {
+    width: 5vw;
+} */
+
+/********************** FOOTER *******************************/
 .menuFooter {
     position: fixed;
     bottom: 0;
@@ -330,117 +486,6 @@ footer ul li {
 
 footer ul li a{
     color: white;
-    font-size: 35px;
-    margin-bottom: 1.5rem;
-}
-
-/********************* M E D I A  Q U E R Y *******************/
-@media screen and (min-width: 500px) and (max-width: 700px) {
-
-/*********** NAV ***********/
-    .icone-maison {
-        width: 13vw;
-        padding-right: 15px;
-    }
-
-    details {
-        width: 7vw;
-    }
-
-    .langue-icone {
-        width: 13vw;
-    }
-
-/**************** M A I N ************************/
-    .grid {
-        position: fixed;
-        display: flex;
-        width: 50vw;
-        margin-right: 5rem;
-        margin-left: 5rem;
-        column-gap: 3rem;
-    }
-}
-
-@media screen and (min-width: 700px) and (max-width: 1000px) {
-    /*********** NAV ***********/
-    .icone-maison {
-        width: 10vw;
-        padding-right: 15px;
-    }
-
-    details {
-        width: 5vw;
-    }
-
-    .langue-icone {
-        width: 10vw;
-    }
-
-    /**************** M A I N ************************/
-    .grid {
-        position: fixed;
-        display: flex;
-        width: 50vw;
-        margin-right: 8.5rem;
-        margin-left: 8.5rem;
-        column-gap: 4rem;
-    }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1300px) {
-    /*********** NAV ***********/
-    .icone-maison {
-        width: 8vw;
-        padding-right: 25px;
-    }
-
-    details {
-        width: 4vw;
-    }
-
-    .langue-icone {
-        width: 8vw;
-    }
-
-    /**************** M A I N ************************/
-    .grid {
-        position: fixed;
-        display: flex;
-        width: 45vw;
-        margin-right: 12.3rem;
-        margin-left: 12.3rem;
-        column-gap: 7rem;
-    }
-}
-
-@media screen and (min-width: 1300px) and (max-width: 1500px) {
-    /*********** NAV ***********/
-    strong {
-        font-size: 2.5rem;
-    }
-
-    .icone-maison {
-        width: 7vw;
-        padding-right: 28px;
-    }
-
-    details {
-        width: 4vw;
-        padding-right: 5px;
-    }
-
-    .langue-icone {
-        width: 7vw;
-    }
-
-    /**************** M A I N ************************/
-    .grid {
-        position: fixed;
-        display: flex;
-        width: 40vw;
-        margin-right: 15.5rem;
-        margin-left: 15.5rem;
-        column-gap: 7rem;
-    }
+    font-size: 30px;
+    margin-bottom: 0.5rem;
 }

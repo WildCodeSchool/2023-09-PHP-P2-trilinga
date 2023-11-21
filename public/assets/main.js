@@ -1,6 +1,6 @@
 for (let index = 0; index < (Math.floor(Math.random() * 4) + 2); index++) {
     confetti({
-        particleCount: 100,
+        particleCount: 500,
         startVelocity: 30,
         spread: 360,
         origin: {

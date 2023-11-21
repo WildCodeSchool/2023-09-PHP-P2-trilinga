@@ -1,10 +1,15 @@
 {% extends 'layout.html.twig' %}
 
+{% block nav %}
+  {% include 'navbar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 <div class="tritri-congrat">
     <img src='https://i.goopics.net/hsc7fu.png' alt='tritri content'/>
 </div>
 <p> Félicitation tu as terminé ce niveau ! </p>
+<a class="newGame" href="/" role="button">Nouvelle partie</a>
 {% endblock %}
 
 {% block javascript %}<script src="assets/main.js"></script>{% endblock %}

@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block nav %}
+  {% include 'navbar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 {% for error in errors %}
     <p>{{error}}</p>
@@ -7,7 +11,7 @@
 <script src="https://kit.fontawesome.com/70959f304a.js" crossorigin="anonymous"></script>
 
 <body>
-    <form method="POST" action="">
+    <form class="form-add" method="POST" action="">
         <a href="/admin"><i class="fa-solid fa-chevron-left" style="color: #ffffff;">Ajouter</i></a> 
             <div class="list-dropdown">
                 <select required name="language">
@@ -36,7 +40,7 @@
             <input type="text" name="falseContent1" placeholder="réponse fausse" required>
             <input type="file" name="falseContent2Url" placeholder="image">
             <input type="text" name="falseContent2" placeholder="réponse fausse" required>
-            <input type="submit" value="Ajouter">
+            <input class="ajouter" type="submit" value="Ajouter">
 
     </form>
 </body>

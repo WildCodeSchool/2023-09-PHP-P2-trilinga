@@ -1,29 +1,17 @@
 <nav>
-    <ul>
-        <li><strong>Trilinga</strong></li>
-    </ul>
-    <ul>
-        <li>
-            <details role="list" dir="rtl">
-                <summary aria-haspopup="listbox" role="link">
-                    <ul role="listbox">
-                        <li>
-                            {% if language == 1 %}
-                                <img src= 'https://i.goopics.net/afviha.png'>
-                            {% elseif language == 2 %}
-                                <img src= 'https://i.goopics.net/nqn5ke.png'>
-                            {% else %}
-                                <img src= 'https://i.goopics.net/w5k6pc.png'>
-                            {% endif %}
-                        </li>
-                    </ul>
-                </summary>
-            </details>
-        </li>
-        <li><a href="/level"> 
-            <div class="icone-maison">
-                <img src= "https://i.goopics.net/4ix5cl.png" alt= 'menu home'>
-            </div>
-        </a></li>
-    </ul>
+    <div class="icone-maison">
+        <a href="/"><strong>Trilinga</strong></a>
+        <a href="/"><img class="maison" src="https://i.goopics.net/4ix5cl.png" alt="menu home"></a>
+    </div>
+        <ul role="listbox">
+            <li>
+                {% if language == 1 %}
+                    <img class="chosen-language" src= 'https://i.goopics.net/afviha.png'>
+                {% elseif language == 2 %}
+                    <img class="chosen-language" src= 'https://i.goopics.net/nqn5ke.png'>
+                {% else %}
+                    <img class="chosen-language" src= 'https://i.goopics.net/w5k6pc.png'>
+                {% endif %}
+            </li>
+        </ul>
 </nav>

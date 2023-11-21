@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block nav %}
+  {% include 'navbar.html.twig' %}
+{% endblock %}
+
 {% block content %}
     <h1>Item {{ item.title }}</h1>
     <p>{{ item.id }}. {{ item.title }}</p>
