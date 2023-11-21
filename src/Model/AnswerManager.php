@@ -21,15 +21,11 @@ class AnswerManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function selectOneAnswerByIdWithQuestion(int $id): array|false
+    public function selectThreeAnswerByIdWithQuestion(int $id): array|false
     {
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE .
-        " JOIN answer AS a ON q.id = a.question_id 
-        WHERE id=:id");
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE question_id=:id");
         $statement->bindValue('id', $id, PDO::PARAM_INT);
-        $statement->bindValue('content', $id, PDO::PARAM_STR);
         $statement->execute();
-
-        return $statement->fetch();
+        return $statement->fetchAll();
     }
 }

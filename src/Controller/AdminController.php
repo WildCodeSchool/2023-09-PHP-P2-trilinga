@@ -84,27 +84,22 @@ class AdminController extends AbstractController
             'levels' => $levels]);
     }
 
-    // public function edit($id)
-    // {
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //         $questionManager = new QuestionManager();
-    //         $question = $questionManager->selectOneQuestionById($id);
+    public function edit($id)
+    {
+        // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $questionManager = new QuestionManager();
+            $question = $questionManager->selectOneQuestionById($id);
 
-    //         $answerManager = new AnswerManager();
-    //         $answers = $answerManager->selectOneAnswerByIdWithQuestion($id);
+            $answerManager = new AnswerManager();
+            $answers = $answerManager->selectThreeAnswerByIdWithQuestion($id);
 
-    //         $errors = [];
-    //         if (empty($errors)) {
-    //             $questionManager->update($question);
+            // $questionManager = new QuestionManager();
+            // $updated = $questionManager->update();
 
-    //             header('Location: /admin/edit?id=' . $id);
-
-    //             return null;
-    //         }
-    //     }
-    //     return $this->twig->render('Item/edit.html.twig', [
-    //         'question' => $question,
-    //         'answers' => $answers
-    //     ]);
-    // }
+            return $this->twig->render('Item/edit.html.twig', [
+                'question' => $question,
+                'answers' => $answers,
+                // 'updated' => $updated
+            ]);
+    }
 }

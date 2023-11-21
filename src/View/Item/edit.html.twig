@@ -1,7 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-{% include 'Item/add.html.twig' %}
     <h1>Modifier</h1>
+    {% for answer in answers %}
+    <p> {{answer.content}} </p>
+    {% endfor %}
+    <p> {{question.entitled}} </p>
     
+    <form method="post">
+	<input type="hidden" value="{{ item.id }}" name="id">
+	<label for="title">Tile</label>
+	<input type="text" value="{{ item.title }}" name="title" id="title">
+	<button>Submit</button>
+</form>
 {% endblock %}
